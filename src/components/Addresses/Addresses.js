@@ -3,99 +3,12 @@ import React from "react";
 import Col from "react-bootstrap/Col";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './Addresses.css'
-import {useFormik} from "formik";
-import * as Yup from 'yup';
 
 
-const Addresses = () => {
-    const formik = useFormik({
-        initialValues:{
-           firstCity:'',
-           firstAddressZipCode:'',
-            firstAddressFax:'',
-            firstAddressLine1:'',
-            firstAddressLine2:'',
-            firstAddressLine3:'',
-            firstAddressPhone1:'',
-            firstAddressPhone2:'',
-
-            secondCity:'',
-            secondAddressZipCode:'',
-            secondAddressFax:'',
-            secondAddressLine1:'',
-            secondAddressLine2:'',
-            secondAddressLine3:'',
-            secondAddressPhone1:'',
-            secondAddressPhone2:'',
-
-            thirdCity:'',
-            thirdAddressZipCode:'',
-            thirdAddressFax:'',
-            thirdAddressLine1:'',
-            thirdAddressLine2:'',
-            thirdAddressLine3:'',
-            thirdAddressPhone1:'',
-            thirdAddressPhone2:'',
-
-        },
-        validationSchema: Yup.object({
-            firstCity: Yup.string()
-                .max(20, 'Must be 20 characters or less'),
-            firstAddressZipCode: Yup.string()
-                .max(5, 'Must be 5 characters or less'),
-            firstAddressLine1: Yup.string()
-                .max(40, 'Must be 40 characters or less'),
-            firstAddressLine2: Yup.string()
-                .max(40, 'Must be 40 characters or less'),
-            firstAddressLine3: Yup.string()
-                .max(40, 'Must be 40 characters or less'),
-            firstAddressFax: Yup.string()
-                .max(20, 'Must be 20 characters or less'),
-            firstAddressPhone1: Yup.string()
-                .max(20, 'Must be 20 characters or less'),
-            firstAddressPhone2: Yup.string()
-                .max(20, 'Must be 20 characters or less'),
-
-            secondCity: Yup.string()
-                .max(20, 'Must be 20 characters or less'),
-            secondAddressZipCode: Yup.string()
-                .max(5, 'Must be 5 characters or less'),
-            secondAddressLine1: Yup.string()
-                .max(40, 'Must be 40 characters or less'),
-            secondAddressLine2: Yup.string()
-                .max(40, 'Must be 40 characters or less'),
-            secondAddressLine3: Yup.string()
-                .max(40, 'Must be 40 characters or less'),
-            secondAddressFax: Yup.string()
-                .max(20, 'Must be 20 characters or less'),
-            secondAddressPhone1: Yup.string()
-                .max(20, 'Must be 20 characters or less'),
-            secondAddressPhone2: Yup.string()
-                .max(20, 'Must be 20 characters or less'),
-
-            thirdCity: Yup.string()
-                .max(20, 'Must be 20 characters or less'),
-            thirdAddressZipCode: Yup.string()
-                .max(5, 'Must be 5 characters or less'),
-            thirdAddressLine1: Yup.string()
-                .max(40, 'Must be 40 characters or less'),
-            thirdAddressLine2: Yup.string()
-                .max(40, 'Must be 40 characters or less'),
-            thirdAddressLine3: Yup.string()
-                .max(40, 'Must be 40 characters or less'),
-            thirdAddressFax: Yup.string()
-                .max(20, 'Must be 20 characters or less'),
-            thirdAddressPhone1: Yup.string()
-                .max(20, 'Must be 20 characters or less'),
-            thirdAddressPhone2: Yup.string()
-                .max(20, 'Must be 20 characters or less'),
-
-        }),
-    })
-
-
+const Addresses = (props) => {
+    const formik = props.formik;
     return (
-            <Form>
+            <div>
                 <legend>
                     First Address Information<br/><br/>
                 </legend>
@@ -346,7 +259,7 @@ const Addresses = () => {
                         </Form.Control.Feedback>
                     </Form.Group>
                 </Form.Row>
-            </Form>
+            </div>
             )
 
 }

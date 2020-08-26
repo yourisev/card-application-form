@@ -5,34 +5,12 @@ import Addresses from "./components/Addresses/Addresses";
 import Form from 'react-bootstrap/Form';
 import * as Yup from "yup";
 import {Formik} from "formik";
+import Top from "./components/top-component/Top";
 
-class App extends React.Component {
+export default class App extends React.Component {
     render() {
         const maxLength = (length) => {
             return "The maximum length is " + length;
-        }
-        const titleOptions = () => {
-            const titles = ['Mr', 'Miss', 'Mrs', 'Dr', 'Eng.', 'H.E', 'Messrs']
-            return titles.map((title, index) => (
-                <option value={index + 1} key={index}>{title}</option>
-            ));
-        }
-
-        const identityOptions = () => {
-            const identities = ['Civil ID', 'Passport', 'Driver License', 'Employment ID', 'Residence Card',
-                'Family Book', 'Social Security Number']
-
-            return identities.map((identity, index) => (
-                <option value={index + 1} key={index}>{identity}</option>
-            ));
-        }
-
-        const maritalStatusOptions = () => {
-            const statuses = ['Single', 'Married', 'Divorced', 'Widower', 'Separated'];
-            return statuses.map((status, index) => (
-                <option value={index + 1}>{status}</option>
-            ))
-
         }
         return (
             <Formik initialValues={{
@@ -110,10 +88,10 @@ class App extends React.Component {
 
             }}
                     onSubmit={(values, {setSubmitting}) => {
-                        setTimeout(() => {
+                        /*setTimeout(() => {
                             alert(JSON.stringify(values, null, 2));
                             setSubmitting(false);
-                        }, 400);
+                        }, 400);*/
                     }}
                     validationSchema={Yup.object({
                         applicationId: Yup.string().required('Required').max(20, "The maximum is length 20"),
@@ -253,7 +231,17 @@ class App extends React.Component {
                             .max(10, 'Must be 10 characters or less'),
                         formCorespondence: Yup.string()
                             .max(10, 'Must be 10 characters or less'),
-                    })}/>
+                    })}>
+                {formik=>(
+                    <Form>
+                        <Top formik={formik}/>
+                        <Addresses formik={formik}/>
+                    </Form>
+                )
+
+                }
+
+            </Formik>
         )
     }
 }
