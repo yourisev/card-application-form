@@ -1,12 +1,11 @@
 import React from 'react';
-import Bottom from "./components/bottom.component";
+import logo from './logo.svg';
 import './App.css';
+import Addresses from "./components/Addresses/Addresses";
 
 function App() {
   return (
-    <div className="App">
-      <Bottom/>
-    </div>
+    <Addresses/>
   );
 }
 
