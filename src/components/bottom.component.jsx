@@ -8,12 +8,14 @@ import Form from 'react-bootstrap/Form';
 import Col from "react-bootstrap/Col";
 
 const Bottom = () => {
-     var n_checked = false;
-    var s_checked = false;
+    var s_checked;
+    var n_checked;
+
 return (
     <Formik
         initialValues={{
-            formAccountType: '',
+            formCardTypeRadios2:true,
+            formAccountTypeRadios2: true,
             formMXPAccount: '',
             formBankAccount: '',
             formAccountCurrency: '',
@@ -129,13 +131,13 @@ return (
 
                         <Form.Group as={Col} controlId="formAccountType">
                             <Form.Label>Account Type </Form.Label>
-                            <Form.Check inline checked
+                            <Form.Check inline defaultChecked
                                 type="radio"
                                 label="O"
                                 name="formAccountTypeRadios"
                                 id="formAccountTypeRadios1"
                             />
-                            <Form.Check inline
+                            <Form.Check inline {...formik.getFieldProps("formAccountTypeRadios2")}
                                 type="radio"
                                 label="N"
                                 name="formAccountTypeRadios"
@@ -147,13 +149,13 @@ return (
                     <Form.Row>
                         <Form.Group as={Col} controlId="formMXPAccount">
                             <Form.Label>MXP Account</Form.Label>
-                            <Form.Control disable= {document.getElementById('formAccountTypeRadios2').checked} type="text" placeholder="MXP Account" {...formik.getFieldProps('formMXPAccount')} isInvalid={formik.touched.formMXPAccount && formik.errors.formMXPAccount}/>
+                            <Form.Control disable= {formik.values.formAccountTypeRadios2} type="text" placeholder="MXP Account" {...formik.getFieldProps('formMXPAccount')} isInvalid={formik.touched.formMXPAccount && formik.errors.formMXPAccount}/>
                             <Form.Control.Feedback type='invalid'>{formik.errors.formMXPAccount}</Form.Control.Feedback>
                         </Form.Group>
 
                         <Form.Group as={Col} controlId="formBankAccount">
                             <Form.Label>Bank Account</Form.Label>
-                            <Form.Control disable= {document.getElementById('formAccountTypeRadios2').checked} type="text" placeholder="Bank Account" {...formik.getFieldProps('formBankAccount')} isInvalid={formik.touched.formBankAccount && formik.errors.formBankAccount}/>
+                            <Form.Control disable= {formik.values.formAccountTypeRadios2} type="text" placeholder="Bank Account" {...formik.getFieldProps('formBankAccount')} isInvalid={formik.touched.formBankAccount && formik.errors.formBankAccount}/>
                             <Form.Control.Feedback type='invalid'>{formik.errors.formBankAccount}</Form.Control.Feedback>
                         </Form.Group>
 
@@ -165,7 +167,7 @@ return (
                     <Form.Row>
                         <Form.Group as={Col} controlId="formAccountCurrency">
                             <Form.Label >Account Currency</Form.Label>
-                            <Form.Control disable= {document.getElementById('formAccountTypeRadios2').checked} type="text" placeholder="e.g XAF" {...formik.getFieldProps('formAccountCurrency')} isInvalid={formik.touched.formAccountCurrency && formik.errors.formAccountCurrency}/>
+                            <Form.Control disable= {formik.values.formAccountTypeRadios2} type="text" placeholder="e.g XAF" {...formik.getFieldProps('formAccountCurrency')} isInvalid={formik.touched.formAccountCurrency && formik.errors.formAccountCurrency}/>
                             <Form.Control.Feedback type='invalid'>{formik.errors.formAccountCurrency}</Form.Control.Feedback>
                         </Form.Group>
 
@@ -300,13 +302,13 @@ return (
                     <Form.Row>
                         <Form.Group as={Col} controlId="formCardType">
                             <Form.Label>Card Type</Form.Label>
-                            <Form.Check inline checked
+                            <Form.Check inline defaultChecked
                                 type="radio"
                                 label="Primary"
                                 name="formCardTypeRadios"
                                 id="formCardTypeRadios1"
                             />
-                            <Form.Check inline
+                            <Form.Check inline {...formik.getFieldProps("formCardTypeRadios2")}
                                 type="radio"
                                 label="Secondary"
                                 name="formCardTypeRadios"
@@ -316,7 +318,7 @@ return (
 
                         <Form.Group as={Col} controlId="formPrimaryCard">
                             <Form.Label>Primary Card</Form.Label>
-                            <Form.Control disable= {document.getElementById('formCardTypeRadios2').checked} type="text" placeholder="Primary Card" {...formik.getFieldProps('formPrimaryCard')} isInvalid={formik.touched.formPrimaryCard && formik.errors.formPrimaryCard}/>
+                            <Form.Control disable= {!formik.values.formCardTypeRadios2} type="text" placeholder="Primary Card" {...formik.getFieldProps('formPrimaryCard')} isInvalid={formik.touched.formPrimaryCard && formik.errors.formPrimaryCard}/>
                             <Form.Control.Feedback type='invalid'>{formik.errors.formPrimaryCard}</Form.Control.Feedback>
                         </Form.Group>
 
