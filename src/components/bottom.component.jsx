@@ -45,7 +45,7 @@ const Bottom = (props) => {
                 <Form.Row>
                     <Form.Group as={Col} controlId="formMXPAccount">
                         <Form.Label>MXP Account</Form.Label>
-                        <Form.Control disable={document.getElementById('formAccountTypeRadios2').checked} type="text"
+                        <Form.Control  type="text"
                                       placeholder="MXP Account" {...formik.getFieldProps('formMXPAccount')}
                                       isInvalid={formik.touched.formMXPAccount && formik.errors.formMXPAccount}/>
                         <Form.Control.Feedback type='invalid'>{formik.errors.formMXPAccount}</Form.Control.Feedback>
@@ -53,7 +53,7 @@ const Bottom = (props) => {
 
                     <Form.Group as={Col} controlId="formBankAccount">
                         <Form.Label>Bank Account</Form.Label>
-                        <Form.Control disable={document.getElementById('formAccountTypeRadios2').checked} type="text"
+                        <Form.Control type="text"
                                       placeholder="Bank Account" {...formik.getFieldProps('formBankAccount')}
                                       isInvalid={formik.touched.formBankAccount && formik.errors.formBankAccount}/>
                         <Form.Control.Feedback type='invalid'>{formik.errors.formBankAccount}</Form.Control.Feedback>
@@ -67,7 +67,7 @@ const Bottom = (props) => {
                 <Form.Row>
                     <Form.Group as={Col} controlId="formAccountCurrency">
                         <Form.Label>Account Currency</Form.Label>
-                        <Form.Control disable={document.getElementById('formAccountTypeRadios2').checked} type="text"
+                        <Form.Control  type="text"
                                       placeholder="e.g XAF" {...formik.getFieldProps('formAccountCurrency')}
                                       isInvalid={formik.touched.formAccountCurrency && formik.errors.formAccountCurrency}/>
                         <Form.Control.Feedback
@@ -240,7 +240,7 @@ const Bottom = (props) => {
 
                     <Form.Group as={Col} controlId="formPrimaryCard">
                         <Form.Label>Primary Card</Form.Label>
-                        <Form.Control disable={document.getElementById('formCardTypeRadios2').checked} type="text"
+                        <Form.Control  type="text"
                                       placeholder="Primary Card" {...formik.getFieldProps('formPrimaryCard')}
                                       isInvalid={formik.touched.formPrimaryCard && formik.errors.formPrimaryCard}/>
                         <Form.Control.Feedback type='invalid'>{formik.errors.formPrimaryCard}</Form.Control.Feedback>

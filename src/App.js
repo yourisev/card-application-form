@@ -119,7 +119,8 @@ export default class App extends React.Component {
                         numberOfDependents: Yup.string().test("Digits only", "The field should be an integer and should be less than 100", (value) => /^\d{1,2}$/.test(value)),
                         customerPositionOrTitle: Yup.string(),
                         firstCity: Yup.string()
-                            .max(20, 'Must be 20 characters or less'),
+                            .max(20, 'Must be 20 characters or less')
+                            .required('Required'),
                         firstAddressZipCode: Yup.string()
                             .max(5, 'Must be 5 characters or less'),
                         firstAddressLine1: Yup.string()

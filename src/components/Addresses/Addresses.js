@@ -93,7 +93,7 @@ const Addresses = (props) => {
                 </Form.Row>
 
                 <legend>
-                    <br/>Second Address Information<br/><br/>
+                    <br/>Second Address Information
                 </legend>
                 <Form.Row>
                     <Form.Group as={Col} controlId="secondAddressType" xs={3}>
@@ -177,7 +177,7 @@ const Addresses = (props) => {
                 </Form.Row>
 
                 <legend>
-                    <br/>Third Address Information<br/><br/>
+                    <br/>Third Address Information
                 </legend>
                 <Form.Row>
                     <Form.Group as={Col} controlId="thirdAddressType" xs={3}>
