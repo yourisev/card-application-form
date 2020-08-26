@@ -29,7 +29,7 @@ export default class Part2 extends React.Component {
         const maritalStatusOptions = () => {
             const statuses = ['Single', 'Married', 'Divorced', 'Widower', 'Separated'];
             return statuses.map((status, index) => (
-                <option value={index + 1}>{status}</option>
+                <option value={index + 1} key={index}>{status}</option>
             ))
 
         }

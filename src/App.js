@@ -6,6 +6,7 @@ import Form from 'react-bootstrap/Form';
 import * as Yup from "yup";
 import {Formik} from "formik";
 import Top from "./components/top-component/Top";
+import Bottom from "./components/bottom.component";
 
 export default class App extends React.Component {
     render() {
@@ -233,9 +234,10 @@ export default class App extends React.Component {
                             .max(10, 'Must be 10 characters or less'),
                     })}>
                 {formik=>(
-                    <Form>
+                    <Form className="form">
                         <Top formik={formik}/>
                         <Addresses formik={formik}/>
+                        {/*<Bottom formik={formik}/>*/}
                     </Form>
                 )
 

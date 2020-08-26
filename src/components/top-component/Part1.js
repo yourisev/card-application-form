@@ -37,16 +37,10 @@ export default class Part1 extends React.Component {
                         {formik.errors.applicationDate}
                     </Form.Control.Feedback>
                 </FormGroup></Col>
+
             </Form.Row>
                 <Form.Row>
-                    <Col><FormGroup controlId="bankId">
-                        <Form.Label>Bank ID</Form.Label>
-                        <Form.Control placeholder="Enter Bank ID" {...formik.getFieldProps('bankId')}
-                                      isInvalid={formik.errors.bankId && formik.touched.bankId}/>
-                        <Form.Control.Feedback type='invalid'>
-                            {formik.errors.bankId}
-                        </Form.Control.Feedback>
-                    </FormGroup></Col>
+
                     <Col><FormGroup controlId="branchId">
                         <Form.Label>Branch Id</Form.Label>
                         <Form.Control placeholder="Enter Branch Id" {...formik.getFieldProps('branchId')}
