@@ -68,7 +68,6 @@ export default class Part2 extends React.Component {
                         firstGender:Yup.string(),
                         customerMaritalStatus:Yup.string(),
                         customerNationality:Yup.string(),
-                        // numberOfDependents:Yup.number().positive("Number must be positive").integer('Value must be an integer').max(99,"The maximum is 99"),
                         numberOfDependents:Yup.string().test("Digits only","The field should be an integer and should be less than 100",(value)=>/^\d{1,2}$/.test(value)),
                         customerPositionOrTitle:Yup.string(),
                     })}>

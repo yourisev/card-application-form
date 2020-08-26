@@ -8,10 +8,10 @@ import Part2 from "./Part2";
 export default class Top extends React.Component {
     render() {
         return (
-            <Form>
+            <div>
                 <Part1/>
                 <Part2/>
-            </Form>
+            </div>
         );
     }
 }

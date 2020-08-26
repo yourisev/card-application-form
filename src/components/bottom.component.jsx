@@ -9,7 +9,6 @@ import Col from "react-bootstrap/Col";
 
 const Bottom = () => {
      var n_checked = false;
-    var s_checked = false;
 return (
     <Formik
         initialValues={{
