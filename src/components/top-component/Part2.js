@@ -32,6 +32,7 @@ export default class Part2 extends React.Component {
             return statuses.map((status, index)=>(
                 <option value={index+1}>{status}</option>
             ))
+
         }
         return (
             <Formik initialValues={{
@@ -67,8 +68,9 @@ export default class Part2 extends React.Component {
                         firstGender:Yup.string(),
                         customerMaritalStatus:Yup.string(),
                         customerNationality:Yup.string(),
-                        numberOfDependents:Yup.number().max(99,"The maximum is 99"),
-                        customerPositionOrTitle:Yup.string().required('Required'),
+                        // numberOfDependents:Yup.number().positive("Number must be positive").integer('Value must be an integer').max(99,"The maximum is 99"),
+                        numberOfDependents:Yup.string().test("Digits only","The field should be an integer and should be less than 100",(value)=>/^\d{1,2}$/.test(value)),
+                        customerPositionOrTitle:Yup.string(),
                     })}>
                 {formik => (
                         <fieldset>
@@ -200,11 +202,10 @@ export default class Part2 extends React.Component {
                             </Form.Row><Form.Row>
                             <Col xs={4}><FormGroup controlId="customerPositionOrTitle">
                                 <Form.Label>Position or Title</Form.Label>
-                                <Form.Control placeholder="Enter Position or Title" {...formik.getFieldProps('customerPositionOrTitle')}
-                                              isInvalid={formik.errors.customerPositionOrTitle && formik.touched.customerPositionOrTitle}/>
-                                <Form.Control.Feedback type='invalid'>
-                                    {formik.errors.customerPositionOrTitle}
-                                </Form.Control.Feedback>
+                                <Form.Control as="select" custom {...formik.getFieldProps('customerPositionOrTitle')}>
+                                    <option value='0'>NONE</option>
+                                    {titleOptions()}
+                                </Form.Control>
                             </FormGroup></Col>
                         </Form.Row>
                         </fieldset>
