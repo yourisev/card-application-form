@@ -168,11 +168,16 @@ export default class Part2 extends React.Component {
                                         name='firstGender'
                                         label='Male'
                                         defaultChecked
-                                        {...formik.getFieldProps('firstGender')}/>
+                                        onClick={(e)=>{
+                                            formik.values.firstGender=true;
+                                        }}/>
                                     <Form.Check inline
                                                 type='radio'
                                                 name='firstGender'
-                                                label='female'/>
+                                                label='female'
+                                                onClick={(e)=>{
+                                                    formik.values.firstGender=false;
+                                                }}/>
                                 </FormGroup></Col>
                                 <Col><FormGroup controlId="customerMaritalStatus">
                                     <Form.Label>Marital Status</Form.Label>
