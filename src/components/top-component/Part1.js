@@ -3,8 +3,6 @@ import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import FormGroup from "react-bootstrap/FormGroup";
 import './top.css';
-import {Formik} from 'formik';
-import * as Yup from 'yup';
 
 export default class Part1 extends React.Component {
 

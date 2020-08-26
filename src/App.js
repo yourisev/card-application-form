@@ -1,12 +1,11 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Addresses from "./components/Addresses/Addresses";
 import Form from 'react-bootstrap/Form';
 import * as Yup from "yup";
 import {Formik} from "formik";
 import Top from "./components/top-component/Top";
-import Bottom from "./components/bottom.component";
+import Bottom from "./components/bottom.component"
 
 export default class App extends React.Component {
     render() {
@@ -64,7 +63,8 @@ export default class App extends React.Component {
                 thirdAddressLine3: '',
                 thirdAddressPhone1: '',
                 thirdAddressPhone2: '',
-                formAccountType: '',
+                formCardTypeRadios2: true,
+                formAccountTypeRadios2: false,
                 formMXPAccount: '',
                 formBankAccount: '',
                 formAccountCurrency: '',
@@ -238,7 +238,7 @@ export default class App extends React.Component {
                     <Form className="form">
                         <Top formik={formik}/>
                         <Addresses formik={formik}/>
-                        {/*<Bottom formik={formik}/>*/}
+                        <Bottom formik={formik}/>
                     </Form>
                 )
 

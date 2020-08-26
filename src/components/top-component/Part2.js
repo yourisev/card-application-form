@@ -2,8 +2,6 @@ import React from "react";
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import FormGroup from "react-bootstrap/FormGroup";
-import * as Yup from "yup";
-import {Formik} from "formik";
 
 
 export default class Part2 extends React.Component {

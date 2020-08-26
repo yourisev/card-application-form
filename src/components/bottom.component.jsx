@@ -1,118 +1,12 @@
 import React from 'react';
 
-import {Formik} from 'formik';
-import * as Yup from 'yup';
-
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Form from 'react-bootstrap/Form';
 import Col from "react-bootstrap/Col";
 
-const Bottom = () => {
-    var s_checked;
-    var n_checked;
-
+const Bottom = (props) => {
+    const formik = props.formik;
     return (
-        <Formik
-            initialValues={{
-                formCardTypeRadios2: true,
-                formAccountTypeRadios2: false,
-                formMXPAccount: '',
-                formBankAccount: '',
-                formAccountCurrency: '',
-                formDebitProgramId: '',
-                formCreditLimit: '',
-                formGuaranteeType: '',
-                formGuaranteeValue: '',
-                formGuaranteeInfo: '',
-                formFirstName: '',
-                formMiddleName: '',
-                formLastName: '',
-                formNameOnCard: '',
-                formCorporateName: '',
-                formCardProgramId: '',
-                formEffectiveDate: '',
-                formPrimaryCard: '',
-                formCardDesignFee: '',
-                formDeliveryOperator: '',
-                formExpressDeliveryFee: '',
-                formCardPersonalizationFee: '',
-                formCorespondence: '',
-
-            }}
-            validationSchema={Yup.object({
-                formAccountType: Yup.string()
-                    .max(15, 'Must be 15 characters or less')
-                    .required('Required'),
-                formMXPAccount: Yup.string()
-                    .max(24, 'Must be 24 characters or less')
-                    .required('Required'),
-                formBankAccount: Yup.string()
-                    .max(24, 'Must be 24 characters or less')
-                    .required('Required'),
-                formAccountCurrency: Yup.string()
-                    .max(3, 'Must be 3 characters or less')
-                    .required('Required'),
-                formDebitProgramId: Yup.string()
-                    .max(10, 'Must be 10 characters or less')
-                    .required('Required'),
-                formCreditLimit: Yup.string()
-                    .test(
-                        'is-decimal',
-                        'invalid input',
-                        value => (value + "").match(/^[0-9]{1,12}(?:\.[0-9]{1,3})?$/),
-                    )
-                    .required('Required'),
-                formGuaranteeType: Yup.string()
-                    .test(
-                        'is-decimal',
-                        'invalid input',
-                        value => (value + "").match(/^[0-9]{1,12}(?:\.[0-9]{1,3})?$/),
-                    ),
-                formGuaranteeValue: Yup.number()
-                    .max(15, 'Must be 15 characters or less'),
-                formGuaranteeInfo: Yup.string()
-                    .max(80, 'Must be 80 characters or less'),
-                formFirstName: Yup.string()
-                    .max(40, 'Must be 40 characters or less')
-                    .required('Required'),
-                formMiddleName: Yup.string()
-                    .max(40, 'Must be 40 characters or less')
-                    .required('Required'),
-                formLastName: Yup.string()
-                    .max(40, 'Must be 40 characters or less')
-                    .required('Required'),
-                formNameOnCard: Yup.string()
-                    .max(25, 'Must be 25 characters or less')
-                    .required('Required'),
-                formCorporateName: Yup.string()
-                    .max(25, 'Must be 25 characters or less'),
-                formCardProgramId: Yup.string()
-                    .max(10, 'Must be 10 characters or less')
-                    .required('Required'),
-                formEffectiveDate: Yup.date()
-                    .required('Required'),
-                formPrimaryCard: Yup.string()
-                    .max(19, 'Must be 19 characters or less')
-                    .required('Required'),
-                formCardDesignFee: Yup.string()
-                    .max(10, 'Must be 10 characters or less'),
-                formDeliveryOperator: Yup.string()
-                    .max(10, 'Must be 10 characters or less'),
-                formExpressDeliveryFee: Yup.string()
-                    .max(10, 'Must be 10 characters or less'),
-                formCardPersonalizationFee: Yup.string()
-                    .max(10, 'Must be 10 characters or less'),
-                formCorespondence: Yup.string()
-                    .max(10, 'Must be 10 characters or less'),
-            })}
-            onSubmit={(values, {setSubmitting}) => {
-                setTimeout(() => {
-                    alert(JSON.stringify(values, null, 2));
-                    setSubmitting(false);
-                }, 400);
-            }}
-        >
-            {formik => (
                 <div>
                     <fieldset>
                         <legend>Part 1</legend>
@@ -482,8 +376,6 @@ const Bottom = () => {
                         </Form.Row>
                     </fieldset>
                 </div>
-            )}
-        </Formik>
     );
 };
 

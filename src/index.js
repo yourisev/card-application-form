@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
-import Top from "./components/top-component/Top";
 import App from "./App";
 
 ReactDOM.render(
